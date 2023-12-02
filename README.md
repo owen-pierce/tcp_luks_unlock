@@ -20,12 +20,12 @@ Generating a key with encryptor:
 
 Unpacking / Packing initramfs set the following in initramfs_packing_tool.sh before running:
 
-initramfs_location=/boot - to the location of your initramfs image
-initramfs_name=initrd.img-6.1.0-10-amd64 - the image name
-zst_output_arch_name=root_fs_archive - the name of the output archive
-block_size=13976 - the blocksize
-tmp_file_sys_name=tmp_rootfs - the tmp file system name
-root_file_sys_name=rootfs = the root file system name
+- initramfs_location=/boot : The location of your initramfs image
+- initramfs_name=initrd.img-6.1.0-10-amd64 : The image name
+- zst_output_arch_name=root_fs_archive : The name of the output archive
+- block_size=13976 : The blocksize
+- tmp_file_sys_name=tmp_rootfs : The tmp file system name
+- root_file_sys_name=rootfs : The root file system name
 
 To have the client load on startup:
 - install the compiled client to tmp_rootfs/bin
