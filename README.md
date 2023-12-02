@@ -30,20 +30,8 @@ root_file_sys_name=rootfs = the root file system name
 To have the client load on startup:
 - install the compiled client to tmp_rootfs/bin
 - create the data directory and install the key file given by encryptor
-- create a file within scripts/local-top with the following contents:
+- copy "tcprun" to scripts/local-top/
 
-#!/bin/sh
-
-PREREQS=""
-
-prereqs() { echo "$PREREQS"; }
-
-case "$1" in
-	prereqs)
-		prereqs
-		exit 0
-		;;
-esac
 
 . /scripts/functions
 configure_networking
