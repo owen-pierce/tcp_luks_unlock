@@ -27,6 +27,10 @@ pthread_cond_t condition_var = PTHREAD_COND_INITIALIZER;
 typedef struct sockaddr_in SA_IN;
 typedef struct sockaddr SA;
 
+
+/* A simple multi-threaded TCP Server created to interact with LUKS encrypted clients and decrypt them via SSH securely. Current WIP and needs crypto method updated for communicating keys over the network */
+
+
 typedef struct {
 	const char* DATA_STORE_PATH;
     const char* SHOW_DEBUG_INFO;

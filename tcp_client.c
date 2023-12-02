@@ -19,6 +19,9 @@
 
 #define SA struct sockaddr
 
+/* Simple TCP Client written in C to act as a "beacon" with the communication stack. Written to be minimal and executed on load of initramfs of target machine which pings back to it's designated server. */
+
+
 void server_Check(int server_socket) {
 	struct ifreq ifr;
 
@@ -27,7 +30,7 @@ void server_Check(int server_socket) {
 	unsigned char ipAddr[15];
 
 	ifr.ifr_addr.sa_family = AF_INET;
-	memcpy(ifr.ifr_name, "enp6s18", IFNAMSIZ - 1);
+	memcpy(ifr.ifr_name, "enp6s18", IFNAMSIZ - 1); //interface to be configured, also to be assigned by .ini
 	ioctl(server_socket, SIOCGIFADDR, &ifr);
 	strcpy(ipAddr, inet_ntoa(((struct sockaddr_in*)&ifr.ifr_addr)->sin_addr));
 
@@ -69,7 +72,7 @@ int main(int argv, char **argc) {
 	bzero(&client_addr, sizeof(client_addr));
 
 	client_addr.sin_family = AF_INET;
-	client_addr.sin_addr.s_addr = inet_addr("10.0.9.121");
+	client_addr.sin_addr.s_addr = inet_addr("10.0.9.121"); //target server address, soon to be passed via .ini file
 	client_addr.sin_port = htons(CLIENTPORT);
 
 	while(1) {
