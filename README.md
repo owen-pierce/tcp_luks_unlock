@@ -31,12 +31,6 @@ To have the client load on startup:
 - install the compiled client to tmp_rootfs/bin
 - create the data directory and install the key file given by encryptor
 - copy "tcprun" to scripts/local-top/
-
-
-. /scripts/functions
-configure_networking
-ifconfig lo up
-
 - Now repack the image using the pack function of initramfs_packing_tool.sh
 
 tcp_client
